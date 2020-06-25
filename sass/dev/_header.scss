@@ -1,0 +1,245 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border-bottom: 1px solid #ccc;
+    background: #dee1e5;
+
+    &__logo,
+    &__my-ava {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__my-ava {
+      display: flex;
+      align-items: center;
+      width: 80px;
+      height: 50px;
+
+      .setting {
+        width: 25px;
+        height: 50px;
+        background: url(../../img/settings.svg) no-repeat 50% 50%/80%;
+        margin-right: 15px;
+      }
+
+      .photo {
+        width: 35px;
+        height: 35px;
+        border: 1px solid #e7e5e5;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 180%;
+          height: auto;
+
+        }
+      }
+    }
+
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background: #f2f3f7;
+    overflow: hidden;
+
+    &__block-users {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      height: 100%;
+      background: #fff;
+      border-right: 1px solid #e7e5e5;
+
+      .chat-content__search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: inherit;
+        height: 50px;
+        padding-left: 45px;
+        background: #fff;
+        border-right: 1px solid #e7e5e5;
+        border-bottom: 1px solid #e7e5e5;
+        z-index: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 25%;
+          left: 15px;
+          width: 20px;
+          height: 20px;
+          background: url(../../img/search.svg) no-repeat 50% 50%/100%;
+        }
+
+        input::placeholder {
+          color: #ccc;
+        }
+
+        input {
+          width: 90%;
+          height: inherit;
+        }
+      }
+
+      .chat-content__list-users {
+        overflow: auto;
+        height: 100%;
+      }
+
+      .user-active {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 12px;
+          left: 12px;
+          width: 8px;
+          height: 8px;
+          border-radius: 5px;
+          background: #2fb53e;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 11.5px;
+          height: 11.5px;
+          border-radius: 5px;
+          background: #fff;
+        }
+      }
+
+      .chat-content__user {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        padding: 15px;
+
+        .user-ava {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 15px;
+          border: 1px solid #e7e5e5;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .user-name {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &__block-text {
+      padding: 30px;
+      width: calc(100% - 200px);
+
+      height: 100%;
+      overflow: auto;
+
+      .chat-content__message {
+        width: 100%;
+        height: auto;
+        padding: 5px 15px;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    border-top: 1px solid #e7e5e5;
+
+    &__button-smile {
+      width: 20px;
+      height: 100%;
+      background: url(../../img/smile.svg) no-repeat 50% 50%/100%;
+    }
+
+    &__text::placeholder {
+      color: #ccc;
+    }
+
+    &__text {
+      width: 79%;
+      height: 30px;
+      padding-left: 15px;
+    }
+
+    &__pen,
+    &__photo,
+    &__record {
+      width: 22px;
+      height: 22px;
+      margin-left: 15px;
+    }
+
+    &__pen {
+      background: url(../../img/pen.svg) no-repeat 50% 50%/100%;
+    }
+
+    &__photo {
+      background: url(../../img/photo.svg) no-repeat 50% 50%/100%;
+    }
+
+    &__record {
+      background: url(../../img/record.svg) no-repeat 50% 50%/100%;
+    }
+
+    &__button {
+      width: 40px;
+      height: 40px;
+      background: #027eed;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #fff;
+      margin-left: 15px;
+      background: #027eed url(../../img/message-b.svg) no-repeat 40% 50%/60%;
+    }
+  }
+}
